@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option csharp_namespace = "P2P.Action.Client";
+
+package Auction;
+
+service Auction 
+{
+  rpc CreateAuction (ItemRequest) returns (ItemReply);
+  rpc SendOffer(OfferRequest) returns (OfferReply);
+  rpc AddUser(UserRequest) returns (UserReply);
+}
+
+message UserRequest
+{
+	string Name = 1;
+    string Email = 2;
+}
+
+message ItemRequest 
+{
+  string name = 1;
+  double basePrice = 2;
+}
+
+message OfferRequest
+{
+	string itemName = 1;
+	string userName = 2;
+	double Price = 3;
+}
+
+message UserReply
+{
+}
+
+message ItemReply 
+{
+}
+
+message OfferReply
+{
+}
